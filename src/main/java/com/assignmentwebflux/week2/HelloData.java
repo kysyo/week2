@@ -8,9 +8,20 @@ public class HelloData {
     String to;
     String message;
 
-    public HelloData(String to, String message){
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    String job;
+
+    public HelloData(String to, String message, String job){
         this.to = to;
         this.message = message;
+        this.job = job;
     }
 
     public String getTo() {

@@ -8,12 +8,17 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Map;
+
 @Component
 public class HelloHandler {
 
-    public static Mono<ServerResponse> hello(ServerRequest request) {
+    public Mono<ServerResponse> hello(ServerRequest request) {
         String name = request.queryParam("name").get();
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromValue(request.queryParam("name").get()));
+        Mono<HelloData> helloData = Mono.just(new HelloData(name, name));
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(helloData, HelloData.class);
     }
+
 }

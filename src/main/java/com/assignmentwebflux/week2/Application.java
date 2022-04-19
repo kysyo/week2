@@ -5,13 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class Week2Application {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Week2Application.class, args);
-//		ConfigurableApplicationContext context = SpringApplication.run(Week2Application.class, args);
-//		HelloClient helloClient = context.getBean(HelloClient.class);
-
+		SpringApplication.run(Application.class, args);
 	}
 
 }

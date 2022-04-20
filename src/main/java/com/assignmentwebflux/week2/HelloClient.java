@@ -11,7 +11,6 @@ import java.util.Map;
 public class HelloClient {
 
     private final WebClient client;
-    private WebClient testClient = WebClient.create("http://localhost:8090");
 
     public HelloClient(WebClient.Builder builder) {
         this.client = builder.baseUrl("http://localhost:8080").build();
